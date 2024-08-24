@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "pizzas")
-public class Pizzas {
+public class Pizza {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,8 +64,6 @@ public class Pizzas {
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
-	
-	
 	
 	
 
