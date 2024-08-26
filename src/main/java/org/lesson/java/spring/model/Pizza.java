@@ -18,7 +18,7 @@ public class Pizza {
 	private String nome;
 	private String descrizione;
 	
-	@Column(name="foto_link")
+	@Column(nullable = true)
 	private String img_url;
 	
 	private double prezzo;
