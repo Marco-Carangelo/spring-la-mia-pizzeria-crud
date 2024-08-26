@@ -16,7 +16,7 @@
 			      <h1>Menù delle pizze</h1>
 			    </div>
 				
-			    <div class="col-12 d-flex justify-content-center" th:each="pizza : ${list}">
+			    <div class="col-12 d-flex justify-content-center" th:each="pizza : ${list}" th:if="${list.size > 0}" >
 					<div class="card border border-dark mb-3" style="max-width: 900px;">
 					  <div class="row g-0">
 					    <div class="col-md-4">
@@ -36,6 +36,12 @@
 					  </div>
 					</div>
 			    </div>
+				
+				<div th:unless="${list.size > 0}">
+					
+					<h2 class="text-danger">Menù delle pizze</h2>
+					 
+				</div>
 			   
 			  </div>
 		</div>
