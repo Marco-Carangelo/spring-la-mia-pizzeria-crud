@@ -5,7 +5,7 @@
 	<head th:insert="elements/fragments :: head">
 		
 <body>
-	
+	<!--HEADER WITH NAVBAR -->
 	<header th:replace="elements/fragments :: header"></header>
 	
 	<main>
@@ -14,8 +14,11 @@
 			
 	</main>
 	
+	<!--FOOTER -->
+	<footer th:replace="elements/fragments :: footer" ></footer>
+
+	<!--Scripts links -->
 	<div th:insert="elements/fragments :: scripts">
-		
 	</div>
 	
 </body>

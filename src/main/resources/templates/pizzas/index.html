@@ -6,8 +6,10 @@
 		
 <body>
 	
+	<!--HEADER WITH NAVBAR -->
 	<header th:replace="elements/fragments :: header"></header>
 	
+	<!--START OF THE MAIN SECTION -->
 	<main>
 		
 		<div class="container-lg border border-warning rounded bg-warning-subtle bg-opacity-25 ">
@@ -45,13 +47,15 @@
 			   
 			  </div>
 		</div>
-		
-		
-			
+
 	</main>
+	<!--END OF THE MAIN SECTION -->
 	
+	<!--FOOTER -->
+	<footer th:replace="elements/fragments :: footer" ></footer>
+	
+	<!--Scripts links -->
 	<div th:insert="elements/fragments :: scripts">
-		
 	</div>
 	
 </body>
