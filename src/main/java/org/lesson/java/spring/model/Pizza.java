@@ -1,5 +1,7 @@
 package org.lesson.java.spring.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +18,7 @@ public class Pizza {
 	private Integer id;
 	
 	private String nome;
+	
 	private String descrizione;
 	
 	@Column(nullable = true)
@@ -23,6 +26,16 @@ public class Pizza {
 	
 	private double prezzo;
 	
+	private LocalDateTime updatedAt;
+	
+
+	
+	public Pizza() {
+		
+	}
+	
+	
+
 	//Getters and Setters
 
 	public Integer getId() {
@@ -64,6 +77,20 @@ public class Pizza {
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
+
+
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	
+	
 	
 	
 
