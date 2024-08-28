@@ -30,5 +30,11 @@ public class PizzaController {
 	return "/pizzas/show";
 	}
 	
+	@GetMapping("/findByNome/{nome}")
+	public String findByNome(@PathVariable("nome") String nome , Model model) {
+	model.addAttribute("list", repository.findByNomeStartsWith(nome));
+	return "/pizzas/index";
+	}
+	
 
 }
