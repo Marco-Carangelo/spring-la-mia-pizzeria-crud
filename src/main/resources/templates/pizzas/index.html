@@ -2,7 +2,7 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 	
-	<head th:insert="elements/fragments :: head">
+	<head th:insert="elements/fragments :: head"> </head>
 		
 <body>
 	
@@ -17,10 +17,22 @@
 			<div class="row ">
 				
 				<!--Main title of the page -->
-			    <div class="col-12 text-center py-2 ">
+			    <div class="col-12 text-center py-3 ">
 			      <h1>Menù delle pizze</h1>
 			    </div>
 				
+				<!--Search bar -->
+				<div>
+					<form action="" method="get" id="pizzaSearch">
+						<div class="col-12 text-center py-3 mb-3 ">
+							<div class="d-inline-flex p-2 fs-4">Cerca la tua pizza:</div>
+							<div class="d-inline-flex ">
+								<input type="text" class="form-control d-inline-flex" id="search" placeholder="" >
+							</div>
+							
+						</div>
+					</form>    
+				</div>
 				<!--Section used to create individual Pizza object cards -->
 				<section th:if="${list.size > 0}" th:each="pizza : ${list}">
 					
@@ -77,6 +89,10 @@
 	<!--Scripts links -->
 	<div th:insert="elements/fragments :: scripts">
 	</div>
+	
+	<script th:src="@{/js/pizza-index.js}">
+		
+	</script>
 	
 </body>
 </html>
