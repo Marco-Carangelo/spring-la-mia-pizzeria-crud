@@ -24,7 +24,7 @@ public class PizzaController {
 	return "/pizzas/index";
 	}
 	
-	@GetMapping("/show/{id}")
+	@GetMapping("/{id}")
 	public String show(@PathVariable("id") Integer id , Model model) {
 	model.addAttribute("pizza", repository.findById(id).get());
 	return "/pizzas/show";
