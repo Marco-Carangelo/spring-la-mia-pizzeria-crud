@@ -22,17 +22,17 @@
 			    </div>
 				
 				<!--Search bar -->
-				<div>
 					<form action="" method="get" id="pizzaSearch">
 						<div class="col-12 text-center py-3 mb-3 ">
-							<div class="d-inline-flex p-2 fs-4">Cerca la tua pizza:</div>
+							<div class="p-2 fs-4">Cerca la tua pizza:</div>
 							<div class="d-inline-flex ">
-								<input type="text" class="form-control d-inline-flex" id="search" placeholder="" >
+								<input type="text" class="form-control mx-3" id="searchInput" name="nome" placeholder="" >
+								<button type="submit" class="btn btn-secondary" id="searchSubmit" >Cerca</button>
 							</div>
 							
 						</div>
 					</form>    
-				</div>
+					
 				<!--Section used to create individual Pizza object cards -->
 				<section th:if="${list.size > 0}" th:each="pizza : ${list}">
 					
