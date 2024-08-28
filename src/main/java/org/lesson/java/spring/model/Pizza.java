@@ -26,6 +26,8 @@ public class Pizza {
 	
 	private double prezzo;
 	
+	private LocalDateTime createdAt;
+	
 	private LocalDateTime updatedAt;
 	
 
@@ -88,6 +90,18 @@ public class Pizza {
 
 	public void setUpdatedAt(LocalDateTime updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+
+
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 	
 	
