@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
 @RequestMapping("/pizzas")
 public class PizzaController {
@@ -31,7 +32,7 @@ public class PizzaController {
 	}
 	
 	@GetMapping("/findByNome/{nome}")
-	public String findByNome(@PathVariable("nome") String nome , Model model) {
+	public String findByNome(@PathVariable("nome")  String nome , Model model) {
 	model.addAttribute("list", repository.findByNomeStartsWith(nome));
 	return "/pizzas/index";
 	}
