@@ -20,7 +20,10 @@
 				<section th:object="${pizza}">
 						
 					<form
-					
+					id="pizza-form"
+					th:object="${book}"
+					th:action="@{/pizzas/create}"
+					method="POST"
 					>
 						
 						<div class="mb-3 pt-2">
