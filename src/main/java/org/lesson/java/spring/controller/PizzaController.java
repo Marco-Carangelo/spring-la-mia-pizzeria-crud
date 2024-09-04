@@ -58,7 +58,7 @@ public class PizzaController {
 		
 		repository.save(formPizza);
 		
-		return "redirect:/pizas";
+		return "redirect:/pizzas";
 	}
 	
 
