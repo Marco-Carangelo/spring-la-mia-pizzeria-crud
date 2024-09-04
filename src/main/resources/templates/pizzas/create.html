@@ -28,17 +28,17 @@
 						
 						<div class="mb-3 pt-2">
 						    <label for="nome" class="form-label">Nome:</label>
-						    <input type="text" class="form-control" id="nome" placeholder="Inserisci il nome">
+						    <input type="text" class="form-control" id="nome" placeholder="Inserisci il nome" th:field="*{nome}">
 						</div> 
 						
 						<div class="mb-3">
 						    <label for="exampleInputPassword1" class="form-label">Descrizione:</label>
-						    <input type="text" class="form-control" id="descrizione" placeholder="Inserisci la descrizione">
+						    <input type="text" class="form-control" id="descrizione" placeholder="Inserisci la descrizione" th:field="*{descrizione}">
 						</div>
 						
 						<div class="mb-3 " >
 							<label class="form-label" for="prezzo">Prezzo:</label>
-						    <input class="form-control w-25" step="0.01" value="00.00" type="number" id="prezzo"  >
+						    <input class="form-control w-25" step="0.01" value="00.00" type="number" id="prezzo" th:field="*{prezzo}" >
 						    
 						</div>
 						 
