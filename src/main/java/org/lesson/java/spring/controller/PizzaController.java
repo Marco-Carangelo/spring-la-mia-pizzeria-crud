@@ -36,6 +36,12 @@ public class PizzaController {
 	model.addAttribute("list", repository.findByNomeStartsWith(nome));
 	return "/pizzas/index";
 	}
-	
+
+
+	@GetMapping("/create")
+	public String create(Model model) {
+		model.addAttribute("pizza", new Pizza());
+		return "/pizzas/create";
+	}
 
 }
