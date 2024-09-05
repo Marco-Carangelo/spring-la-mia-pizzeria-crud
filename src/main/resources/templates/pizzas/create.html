@@ -25,21 +25,45 @@
 					th:action="@{/pizzas/create}"
 					method="POST"
 					>
+						<!--<div th:if="${#fields.hasErrors()}">
+							<ul>
+							<li
+							th:each="err : ${#fields.allErrors()}"
+							th:text="${err}">
+							</li>
+						</ul>
+							
+						</div>-->
+						
 						
 						<div class="mb-3 pt-2">
 						    <label for="nome" class="form-label">Nome:</label>
-						    <input type="text" class="form-control" id="nome" placeholder="Inserisci il nome" th:field="*{nome}">
+						    <input type="text" class="form-control" id="nome" placeholder="Inserisci il nome" th:field="*{nome}" th:errorClass="is-invalid">
+							<div th:if="${#fields.hasErrors('nome')}" class="invalid-feedback">
+								<ul>
+								<li class="alert alert-danger" th:each="err : ${#fields.errors('nome')}" th:text="${err}"></li>
+								</ul>
+							</div>
 						</div> 
 						
 						<div class="mb-3">
 						    <label for="exampleInputPassword1" class="form-label">Descrizione:</label>
-						    <input type="text" class="form-control" id="descrizione" placeholder="Inserisci la descrizione" th:field="*{descrizione}">
+						    <input type="text" class="form-control" id="descrizione" placeholder="Inserisci la descrizione" th:field="*{descrizione}" th:errorClass="is-invalid">
+							<div th:if="${#fields.hasErrors('descrizione')}" class="invalid-feedback">
+								<ul>
+								<li class="alert alert-danger" th:each="err : ${#fields.errors('descrizione')}" th:text="${err}"></li>
+								</ul>
+							</div>
 						</div>
 						
 						<div class="mb-3 " >
 							<label class="form-label" for="prezzo">Prezzo:</label>
-						    <input class="form-control w-25" step="0.01" value="00.00" type="number" id="prezzo" th:field="*{prezzo}" >
-						    
+						    <input class="form-control w-25" step="0.01" value="00.00" type="number" id="prezzo" th:field="*{prezzo}"  th:errorClass="is-invalid">
+							<div th:if="${#fields.hasErrors('prezzo')}" class="invalid-feedback">
+								<ul>
+								<li class="alert alert-danger" th:each="err : ${#fields.errors('prezzo')}" th:text="${err}"></li>
+								</ul>
+							</div>
 						</div>
 						 
 						<div class="mb-3">
