@@ -21,20 +21,28 @@
 			      <h1>Menù delle pizze</h1>
 			    </div>
 				
-				<!--Search bar -->
-					<form action="" method="get" id="pizzaSearch">
-						<div class="col-12 text-center py-3 mb-3 ">
-							<div class="p-2 fs-4">Cerca la tua pizza:</div>
-							<div class="d-inline-flex ">
-								<input type="text" class="form-control mx-3" id="searchInput" name="nome" placeholder="" >
-								<button type="submit" class="btn btn-secondary" id="searchSubmit" >Cerca</button>
-							</div>
+				<!--Search bar and create page button  -->
+					<div class="d-flex justify-content-around">
+						<div>
+							<form action="" method="get" id="pizzaSearch">
+								<div class="col-12 text-center py-3 mb-3 ">
+									<div class="p-2 fs-4">Cerca la tua pizza:</div>
+									<div class="d-inline-flex ">
+										<input type="text" class="form-control mx-3" id="searchInput" name="nome" placeholder="" >
+										<button type="submit" class="btn btn-secondary" id="searchSubmit" >Cerca</button>
+									</div>
+									
+								</div>
+							</form>    
+						</div >
 							
+						<div class="text-center">
+							<div class="p-2 fs-4">Crea la tua pizza</div>
+							<a href="pizzas/create" class="btn btn-primary btn-lg ps-3"  role="button">Crea</a>
 						</div>
-					</form>    
-					
+					</div>
 				<!--Section used to create individual Pizza object cards -->
-				<section th:if="${list.size > 0}" th:each="pizza : ${list}">
+				<th:block th:if="${list.size > 0}" th:each="pizza : ${list}">
 					
 					
 				    <div class="col-12 d-flex justify-content-center" >
@@ -70,7 +78,7 @@
 						  </div>
 						</div>
 				    </div>
-				</section>
+				</th:block>
 				
 				<!--SHOWED ONLY IF THERE ARE NO PIZZA OBJECTS TO SHOW -->
 				<div th:unless="${list.size > 0}">
