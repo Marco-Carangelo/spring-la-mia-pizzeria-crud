@@ -62,10 +62,21 @@
 						    <div class="col-md-8">
 						      <div class="card-body">
 								
-								<!--Object name and link to the individual show-->
-								<div class="border-bottom border-dark">
-						        	<h5 class="card-title"><a class=" link-dark  link-underline-warning"  th:href="@{/pizzas/{id}(id=${pizza.id})}">[[${pizza.nome}]]</a></h5>
+								<!--Name/show, edit and delete group-->
+								<div class="border-bottom border-dark d-flex justify-content-between pb-2">
+									<!--Object name and link to the individual show-->
+									<div >
+							        	<h5 class="card-title"><a class=" link-dark  link-underline-warning"  th:href="@{/pizzas/{id}(id=${pizza.id})}">[[${pizza.nome}]]</a></h5>
+									</div>
+									<!--Edit and Delete buttons-->
+									<div >
+										<button type="submit" class="btn btn-success btn-sm me-1" id="" >Edit</button>
+										<button type="submit" class="btn btn-warning btn-sm " id="" >Delete</button>
+									</div>
+									
+									
 								</div>
+								
 								
 								<!--Object info-->
 								<h6 class="mb-1 mt-2" >Ingredienti:</h6>
