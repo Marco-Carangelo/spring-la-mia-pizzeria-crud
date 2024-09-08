@@ -2,6 +2,8 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
+		
+		<!--HEAD FRAGMENT-->
 		<th:block th:fragment="head" >
 			
 						
@@ -13,6 +15,7 @@
 	</head>
 <body>
 	
+	<!--HEADER FRAGMENT-->
 	<header th:fragment="header(route)" >
 		<nav class="navbar navbar-expand-lg mb-3 bg-dark border-bottom border-body border-warning border-2 " data-bs-theme="dark">
 		  <div class="container-fluid">
@@ -38,6 +41,8 @@
 		
 	</header>
 	
+	
+	<!--FOOTER FRAGMENT-->
 	<footer th:fragment="footer" class="bg-dark border-top border-warning mt-3 mb-0" data-bs-theme="dark">
 		<ul class="nav justify-content-center border-bottom  mb-3">
 		      <li class="nav-item"><a th:href="@{/}" class="nav-link px-2 text-body-secondary">Home</a></li>
@@ -46,7 +51,7 @@
 		    <p class="text-center text-body-secondary">© 2024 Marco's pizza, Inc</p>
 	</footer>
 	
-	
+	<!--SCRIPTS FRAGMENT-->
 	<th:block th:fragment="scripts" >
 		<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.min.js}"></script>
 	</th:block>
