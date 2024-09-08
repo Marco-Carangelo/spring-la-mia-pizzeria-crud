@@ -24,11 +24,11 @@
 				<!--Search bar and create page button  -->
 					<div class="d-flex justify-content-around">
 						<div>
-							<form action="" method="get" id="pizzaSearch">
+							<form th:action="@{/pizzas}" method="get" id="pizzaSearch">
 								<div class="col-12 text-center py-3 mb-3 ">
 									<div class="p-2 fs-4">Cerca la tua pizza:</div>
 									<div class="d-inline-flex ">
-										<input type="text" class="form-control mx-3" id="searchInput" name="nome" placeholder="" >
+										<input type="text" class="form-control mx-3" id="searchInput" name="name" placeholder="" >
 										<button type="submit" class="btn btn-secondary" id="searchSubmit" >Cerca</button>
 									</div>
 									
@@ -98,9 +98,7 @@
 	<div th:insert="elements/fragments :: scripts">
 	</div>
 	
-	<script th:src="@{/js/pizza-index.js}">
-		
-	</script>
+
 	
 </body>
 </html>

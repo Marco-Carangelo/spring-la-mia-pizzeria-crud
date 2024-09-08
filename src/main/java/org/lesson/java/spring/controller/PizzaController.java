@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
@@ -24,22 +25,33 @@ public class PizzaController {
 	private PizzaRepository repository;
 	
 	@GetMapping
-	public String index(Model model) {
-	List<Pizza> result = repository.findAll();
-	model.addAttribute("list", result);
-	return "/pizzas/index";
+	public String index(Model model, @RequestParam( name = "name", required = false ) String name) {
+		
+		List<Pizza> result;
+		
+		if (name != null && !name.isEmpty()) {
+			
+			result = repository.findByNomeStartsWith(name);
+			
+		}else {
+			
+			result = repository.findAll();
+		}
+		
+		model.addAttribute("list", result);
+		return "/pizzas/index";
 	}
 	
 	@GetMapping("/{id}")
 	public String show(@PathVariable("id") Integer id , Model model) {
-	model.addAttribute("pizza", repository.findById(id).get());
-	return "/pizzas/show";
+		model.addAttribute("pizza", repository.findById(id).get());
+		return "/pizzas/show";
 	}
 	
 	@GetMapping("/findByNome/{nome}")
 	public String findByNome(@PathVariable("nome")  String nome , Model model) {
-	model.addAttribute("list", repository.findByNomeStartsWith(nome));
-	return "/pizzas/index";
+		model.addAttribute("list", repository.findByNomeStartsWith(nome));
+		return "/pizzas/index";
 	}
 
 
