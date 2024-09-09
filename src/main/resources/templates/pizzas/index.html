@@ -71,7 +71,11 @@
 									<!--Edit and Delete buttons-->
 									<div >
 										<a class="btn btn-success btn-sm me-1"  th:href="@{/pizzas/edit/{id}(id=${pizza.id})}">Modifica</a>
-										<a  class="btn btn-warning btn-sm " >Elimina</a>
+										
+										<form class="d-inline-block" th:action="@{/pizzas/delete/{id}(id=${pizza.id})}" method="POST">
+											<button type="submit" class="btn btn-warning btn-sm " >Elimina</button>	
+										</form>
+										
 									</div>
 									
 									
