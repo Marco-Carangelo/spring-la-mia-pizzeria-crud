@@ -21,6 +21,13 @@
 			      <h1>Menù delle pizze</h1>
 			    </div>
 				
+				<!--Section for confermation messages -->
+				<th:block th:if="${message} != null">
+					
+					<div th:replace="elements/fragments :: succAlert(${message})"></div>
+				
+				</th:block>
+				
 				<!--Search bar and create page button  -->
 					<div class="d-flex justify-content-around">
 						<div>
@@ -72,9 +79,33 @@
 									<div >
 										<a class="btn btn-success btn-sm me-1"  th:href="@{/pizzas/edit/{id}(id=${pizza.id})}">Modifica</a>
 										
-										<form class="d-inline-block" th:action="@{/pizzas/delete/{id}(id=${pizza.id})}" method="POST">
-											<button type="submit" class="btn btn-warning btn-sm " >Elimina</button>	
-										</form>
+										
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-warning" data-bs-toggle="modal" th:data-bs-target="'#delete-modal' + ${pizza.id}">
+										  Elimina
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" th:id="'delete-modal' + ${pizza.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h1 class="modal-title fs-5" id="staticBackdropLabel">Elimina pizza</h1>
+										        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										      </div>
+										      <div class="modal-body">
+										      	Si è sicuri di voler cancellare la pizza [[${pizza.nome}]]?
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+												<form class="d-inline-block" th:action="@{/pizzas/delete/{id}(id=${pizza.id})}" method="POST">
+													<button type="submit" class="btn btn-warning btn-sm " >Elimina</button>	
+												</form>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+										
 										
 									</div>
 									
