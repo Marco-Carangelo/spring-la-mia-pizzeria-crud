@@ -70,8 +70,8 @@
 									</div>
 									<!--Edit and Delete buttons-->
 									<div >
-										<button type="submit" class="btn btn-success btn-sm me-1" id="" >Edit</button>
-										<button type="submit" class="btn btn-warning btn-sm " id="" >Delete</button>
+										<a class="btn btn-success btn-sm me-1"  th:href="@{/pizzas/edit/{id}(id=${pizza.id})}">Modifica</a>
+										<a  class="btn btn-warning btn-sm " >Elimina</a>
 									</div>
 									
 									
