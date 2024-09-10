@@ -73,12 +73,15 @@ public class PizzaController {
 			return "/pizzas/create";
 		}
 		
+		formPizza.setImg_url("/img/logo-mia-pizzeria.png");
+		
 		repository.save(formPizza);
 		
 		attributes.addFlashAttribute("message", "La pizza  " + formPizza.getNome() + " è stata creata");
 		
 		return "redirect:/pizzas";
 	}
+	
 	
 	@GetMapping("/edit/{id}")
 	public String edit(
