@@ -50,6 +50,11 @@
 							</div>
 						</div>
 						
+						<div class="mb-3 pt-2 visually-hidden">
+						    <label for="img" class="form-label">Nome:</label>
+						    <input type="text" class="form-control" id="img"  th:field="*{img_url}" >
+						</div> 
+						
 						<div class="mb-3 " >
 							<label class="form-label" for="prezzo">Prezzo:</label>
 						    <input class="form-control w-25" step="0.01" value="00.00" type="number" id="prezzo" th:field="*{prezzo}"  th:errorClass="is-invalid">
