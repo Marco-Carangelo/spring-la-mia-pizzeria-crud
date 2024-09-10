@@ -66,13 +66,16 @@ public class PizzaController {
 	public String store(
 			@Valid @ModelAttribute("pizza") Pizza formPizza,
 			BindingResult bindingResult,
-			Model model){
+			Model model,
+			RedirectAttributes attributes ){
 		
 		if(bindingResult.hasErrors()) {
 			return "/pizzas/create";
 		}
 		
 		repository.save(formPizza);
+		
+		attributes.addFlashAttribute("message", "La pizza  " + formPizza.getNome() + " è stata creata");
 		
 		return "redirect:/pizzas";
 	}
@@ -89,13 +92,16 @@ public class PizzaController {
 	public String update(
 			@Valid @ModelAttribute("pizza") Pizza formPizza,
 			BindingResult bindingResult,
-			Model model){
+			Model model,
+			RedirectAttributes attributes ){
 		
 		if(bindingResult.hasErrors()) {
 			return "/pizzas/edit";
 		}
 		
 		repository.save(formPizza);
+		
+		attributes.addFlashAttribute("message", "La pizza  " + formPizza.getNome() + " è stata aggiornata");
 		
 		return "redirect:/pizzas";
 	}

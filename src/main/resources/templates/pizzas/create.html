@@ -50,7 +50,7 @@
 						</div> 
 						
 						<div class="mb-3">
-						    <label for="exampleInputPassword1" class="form-label">Descrizione:</label>
+						    <label for="descrizione" class="form-label">Descrizione:</label>
 						    <input type="text" class="form-control" id="descrizione" placeholder="Inserisci la descrizione" th:field="*{descrizione}" th:errorClass="is-invalid">
 							<div th:if="${#fields.hasErrors('descrizione')}" class="invalid-feedback">
 								<ul>
@@ -58,6 +58,7 @@
 								</ul>
 							</div>
 						</div>
+						
 						
 						<div class="mb-3 " >
 							<label class="form-label" for="prezzo">Prezzo:</label>
